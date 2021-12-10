@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace TechJobsOO
 {
@@ -24,17 +25,24 @@ namespace TechJobsOO
 
         public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
-            Name = name;        
-            EmployerName = employerName;
+            Name = name;
+            EmployerName = employerName;   
             EmployerLocation = employerLocation;
             JobType = jobType;
             JobCoreCompetency = jobCoreCompetency;
 
         }
-        
+   
         public override string ToString()
         {
-            return $"ID: {Id}\nName: {Name}\nEmployer: {EmployerName}\nPosition: {JobType}\nCore Competency: {JobCoreCompetency}\n";
+            if(Name == "" && EmployerName.ToString() == "" && EmployerLocation.ToString() == "" && JobType.ToString() == "" && JobCoreCompetency.ToString() == "")
+            {
+                return "OOPS! This job does not seem to exist\n";
+            }
+            
+            
+
+            return $"ID: __{Id}__\nName: __{(Name == "" ? "Data not available" : Name)}__\nEmployer: __{(EmployerName.ToString() == "" ? "Data not available" : EmployerName.ToString())}__\nLocation: __{(EmployerLocation.ToString() == "" ? "Data not available" : EmployerLocation.ToString())}__\nPosition: __{(JobType.ToString() == "" ? "Data not available" : JobType.ToString())}__\nCore Competency: __{(JobCoreCompetency.ToString() == "" ? "Data not available" : JobCoreCompetency.ToString())}__\n";
         }
 
         public override bool Equals(object obj)
