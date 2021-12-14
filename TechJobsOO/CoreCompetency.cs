@@ -18,7 +18,6 @@ namespace TechJobsOO
 
         public CoreCompetency(string value) : base(value)
         {
-            Value = value;
         }
 
         /*public override bool Equals(object obj)

@@ -19,7 +19,6 @@ namespace TechJobsOO
         }*/
         public Employer(string value) : base(value)
         {
-            Value = value;
         }
         /*public override bool Equals(object obj)
         {
